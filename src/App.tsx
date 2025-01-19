@@ -1,11 +1,10 @@
-import { DropDown } from "./components/Dropdown";
-function App() {
+import { RoutesMain } from "./routes/routesMain";
+const App = () => {
   return (
     <>
-      <h1 className="bg-black text-white">ola mundo</h1>
-      <DropDown />
+      <RoutesMain />
     </>
   );
-}
+};
 
 export default App;

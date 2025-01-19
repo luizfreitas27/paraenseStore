@@ -1,0 +1,43 @@
+/* Ensure the container has the correct positioning and size */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 50s linear infinite; /* Adjust duration for speed */
+  gap: 2rem; /* Espaçamento entre as imagens */
+  width: 100%;
+  will-change: transform;
+}
+
+.carousel-image {
+  width: 150px; /* Define a largura das imagens */
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain; /* Garantir que as imagens não fiquem distorcidas */
+}
+
+/* Keyframes for continuous scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Move the images to the left */
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel-track {
+    animation: scroll 30s linear infinite; /* Acelera a animação em telas pequenas */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-track {
+    animation: scroll 20s linear infinite; /* Acelera ainda mais em telas muito pequenas */
+  }
+}

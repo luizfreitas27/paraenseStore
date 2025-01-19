@@ -1,3 +1,5 @@
+@import url(./font.css);
+@import url(./custom.css);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,7 +29,11 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
+    --primary-blue: #0c396d;
+    --primary-yellow: #c3c545;
+    --primary-orange: #d68635;
+    --primary-green: #519e52;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -53,9 +59,33 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
+
+@keyframes gradientLoop {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient-loop {
+  /* background: linear-gradient(270deg, #ff7a18, #af002d, #319197); */
+  background: linear-gradient(270deg, #c3c545, #d68635, #aa3351);
+  background-size: 600% 600%;
+  animation: gradientLoop 5s ease infinite;
+}
+
+.border-header {
+  border-bottom: 4px solid #d68635;
+}
+
 @layer base {
   * {
     @apply border-border;
